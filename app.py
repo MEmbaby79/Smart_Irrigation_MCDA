@@ -1,7 +1,12 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-import plotly.graph_objects as go
+    import plotly.graph_objects as go
+except ImportError:
+    import subprocess
+    subprocess.run(["pip", "install", "plotly"])
+    import plotly.express as px
+    import plotly.graph_objects as go
 
 st.set_page_config(
     page_title="أداة MCDA للري الذكي — مصر",
